@@ -9,11 +9,11 @@ def sort_elem(s: str):
     
     
     string_to_add = s.split(" ")
-    if len(string_to_add) < 22:
+    if len(string_to_add) < 22 or s == None:
         return
 
     new_dict_entry = {
-        "Date and Tme": f"{string_to_add[16]} {string_to_add[17]}, {string_to_add[18]} {string_to_add[19]}",
+        
         
         f"{string_to_add[0]} {string_to_add[1]}" : #Away Team
             {
@@ -27,7 +27,7 @@ def sort_elem(s: str):
                 "Money": f"{string_to_add[12]}",
                 "Total": f"{string_to_add[13]} {string_to_add[14]} / {string_to_add[15]}"             
             },
-        
+        "Date and Tme": f"{string_to_add[16]} {string_to_add[17]} {string_to_add[18]} {string_to_add[19]}"
     }   
  
     return new_dict_entry
