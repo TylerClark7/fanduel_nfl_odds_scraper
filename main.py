@@ -14,38 +14,38 @@ options.headless = True
 options.add_argument("--enable-javascript")
 
 driver = webdriver.Chrome(options=options, executable_path="chromedriver.exe")
-driver.get("https://sportsbook.fanduel.com/navigation/nfl") #Can put almost any fanduel link here as long as it isolates nfl stats
+# Can put almost any fanduel link here as long as it isolates nfl stats
+driver.get("https://sportsbook.fanduel.com/navigation/nfl")
 
-#driver.get("https://sportsbook.fanduel.com/navigation/nfl?tab=week-2")
+# driver.get("https://sportsbook.fanduel.com/navigation/nfl?tab=week-2")
 
-#Returns all text for each block on https://sportsbook.fanduel.com/navigation/nfl
-odds = driver.find_elements(By.XPATH, '//*[@id="root"]/div/div[2]/div[1]/div/div[1]/div/div[3]/div/div')
+# Returns all text for each block on https://sportsbook.fanduel.com/navigation/nfl
+odds = driver.find_elements(
+    By.XPATH, '//*[@id="root"]/div/div[2]/div[1]/div/div[1]/div/div[3]/div/div')
 
 for item in odds:
-    stats.append(item.text.replace("\n", " "))  #Selenium adds \n to each block of text                              
+    # Selenium adds \n to each block of text
+    stats.append(item.text.replace("\n", " "))
 
 driver.quit()
 
 
-for stat in stats[2:len(stats)-1]:      #Element text returns 2 uneeded lines at front end end, [2:len(stats)-1] removes all 3
-
-    
-    #Sometimes selenium returns headers like "NFL Odds" 
-    #this causes sort_elem to return None values 
-    #we dont want those
+# Element text returns 2 uneeded lines at front end end, [2:len(stats)-1] removes all 3
+for stat in stats[2:len(stats)-1]:
+    # Sometimes selenium returns headers like "NFL Odds"
+    # this causes sort_elem to return None values
+    # we dont want those
 
     stat_to_add = sort_elem(stat)
-    if stat_to_add != None:     
+    if stat_to_add != None:
         game_odds.append(stat_to_add)
 
-#This is just to visualise whats going on in terminal
+# This is just to visualise whats going on in terminal
 for element in game_odds:
-
 
     df = pd.DataFrame(element)
     display(df)
     print("\n \n")
 
-#Try week links like the one below
-#URL = https://sportsbook.fanduel.com/navigation/nfl?tab=week-1
-
+# Try week links like the one below
+# URL = https://sportsbook.fanduel.com/navigation/nfl?tab=week-1
