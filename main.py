@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from sort import sort_elem
 
 stats = []
-n = []
+game_odds = []
 
 options = Options()
 options.headless = True
@@ -25,13 +25,13 @@ driver.quit()
 
 for stat in stats[2:len(stats)-1]:
     #Element text returns 2 uneeded lines at front end end, [2:len(stats)-1] removes all 3
-    n.append(sort_elem(stat))
+    game_odds.append(sort_elem(stat))
 
 #This is just to visualise whats going on in terminal
-for el in n:
-    if el != None:
-        print(el)
-    print("\n")
+for element in game_odds:
+    if element != None:
+        print(element)
+        print("\n")
 
 
 
