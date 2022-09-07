@@ -24,7 +24,7 @@ driver.quit()
 
 
 for stat in stats[2:len(stats)-1]:
-    print(stat)
+
     #Element text returns 2 uneeded lines at front end end, [2:len(stats)-1] removes all 3
     game_odds.append(sort_elem(stat))
 
