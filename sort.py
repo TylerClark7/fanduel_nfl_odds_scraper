@@ -3,16 +3,17 @@
 # MONEY
 # TOTAL
 #And each team and format them in a readable way
-
+#MIN Vikings PHI Eagles +2 -105 +118 O 47.5 -110 -2 -115 -138 U 47.5 -110 SEP 19, 8:31PM ET Stats More wagers
 
 def sort_elem(s: str):
     
     
     string_to_add = s.split(" ")
-    if len(string_to_add) < 23:
+    if len(string_to_add) < 22:
         return
 
     new_dict_entry = {
+        "Date and Tme": f"{string_to_add[16]} {string_to_add[17]}, {string_to_add[18]} {string_to_add[19]}",
         
         f"{string_to_add[0]} {string_to_add[1]}" : #Away Team
             {
