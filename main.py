@@ -29,7 +29,8 @@ for stat in stats[2:len(stats)-1]:
 
 #This is just to visualise whats going on in terminal
 for el in n:
-    print(el)
+    if el != None:
+        print(el)
     print("\n")
 
 

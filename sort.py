@@ -6,7 +6,7 @@
 
 
 def sort_elem(s: str):
-    print(s)
+    
     
     string_to_add = s.split(" ")
     if len(string_to_add) < 23:
