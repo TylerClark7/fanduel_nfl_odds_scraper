@@ -15,7 +15,6 @@ Currnetly only works for NFl stats becuase all nfl team names are a single word
 
 At current state, certain fanduel games have "TOTAL" locked, these games cannot be scraped
 
-I have no idea how fanduel odds work Please dont come after me
 
 
 
